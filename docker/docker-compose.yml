@@ -1,0 +1,16 @@
+services:
+  osint-agent:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    container_name: osint-agent
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../uploads:/app/uploads
+      - ../config:/app/config
+      - ../app:/app/app
+    env_file:
+      - ../.env
+    environment:
+      - PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
