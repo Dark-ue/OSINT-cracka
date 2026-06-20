@@ -1,4 +1,3 @@
-import os
 import json
 import subprocess
 from PIL import Image
