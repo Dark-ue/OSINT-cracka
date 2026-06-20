@@ -27,7 +27,7 @@ def extract_gps(exif_data):
     return gps
 
 def extract_barcodes(image_path):
-    """Extracts barcodes and QR codes from an image."""
+    
     try:
         # Try cv2 first for better handling
         img = cv2.imread(image_path)
@@ -49,7 +49,7 @@ def extract_barcodes(image_path):
         return [{"error": f"Barcode extraction failed: {e}"}]
 
 def run_all_extractions(image_path):
-    """Runs all extraction methods on the image."""
+    
     exif = extract_exif(image_path)
     gps = extract_gps(exif)
     barcodes = extract_barcodes(image_path)
